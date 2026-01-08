@@ -1,2 +1,12 @@
-package com.example.smartAuthentication.dto;public class LoginUserDto {
+package com.example.smartAuthentication.dto;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class LoginUserDto {
+
+    private String email;
+    private String password;
 }
