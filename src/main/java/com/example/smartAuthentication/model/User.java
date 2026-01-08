@@ -16,7 +16,6 @@ import java.util.List;
 @Table(name = "users")
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 public class User implements UserDetails {
     @Id
@@ -33,6 +32,9 @@ public class User implements UserDetails {
     private String verificationCode;
     @Column(name = "verification_expiration")
     private LocalDateTime verificationExpiration;
+
+    public User() {
+    }
 
     public User(String username, String email, String password) {
         this.username = username;
