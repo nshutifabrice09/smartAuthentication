@@ -2,6 +2,7 @@ package com.example.smartAuthentication.controller;
 
 import com.example.smartAuthentication.dto.LoginUserDto;
 import com.example.smartAuthentication.dto.RegisterUserDto;
+import com.example.smartAuthentication.dto.ResendDto;
 import com.example.smartAuthentication.dto.VerifiedUserDto;
 import com.example.smartAuthentication.model.User;
 import com.example.smartAuthentication.response.LoginResponse;
@@ -48,9 +49,9 @@ public class AuthenticationController {
     }
 
     @PostMapping("/resend")
-    public ResponseEntity<?> resendVerificationCode(@RequestParam String email) {
+    public ResponseEntity<?> resendVerificationCode(@RequestBody ResendDto resendDto) {
         try{
-            authenticationService.resendVerificationCode(email);
+            authenticationService.resendVerificationCode(resendDto.getEmail());
             return ResponseEntity.ok("Verification code sent.");
         } catch (RuntimeException runtimeException) {
             return ResponseEntity.badRequest().body(runtimeException.getMessage());

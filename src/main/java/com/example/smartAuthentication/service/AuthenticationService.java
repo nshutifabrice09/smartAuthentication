@@ -5,7 +5,6 @@ import com.example.smartAuthentication.dto.RegisterUserDto;
 import com.example.smartAuthentication.dto.VerifiedUserDto;
 import com.example.smartAuthentication.model.User;
 import com.example.smartAuthentication.repository.UserRepository;
-import jakarta.mail.MessagingException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
