@@ -9,7 +9,6 @@ services:
       - DATABASE_PASSWORD=9042
       - SUPPORT_EMAIL=nshuti.fabrice09@gmail.com
       - APP_PASSWORD=klsamimzojenzgra
-
     depends_on:
       - postgres
     networks:
@@ -27,8 +26,10 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     networks:
-      - spring-project  # Just reference the network name here
+      - spring-project
 
 volumes:
   postgres-data:
 
+networks:
+  spring-project:
